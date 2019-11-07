@@ -90,3 +90,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = "/static/"
+
+
+# Zoom API settings
+ZOOM_SDK_KEY = os.environ.get("ZOOM_SDK_KEY")
+ZOOM_SDK_SECRET = os.environ.get("ZOOM_SDK_SECRET")
