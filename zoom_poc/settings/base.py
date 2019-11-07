@@ -48,17 +48,6 @@ TEMPLATES = [
 WSGI_APPLICATION = "zoom_poc.wsgi.application"
 
 
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -95,3 +84,4 @@ STATIC_URL = "/static/"
 # Zoom API settings
 ZOOM_SDK_KEY = os.environ.get("ZOOM_SDK_KEY")
 ZOOM_SDK_SECRET = os.environ.get("ZOOM_SDK_SECRET")
+ZOOM_USER_ID = os.environ.get("ZOOM_USER_ID")

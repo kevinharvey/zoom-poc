@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from telemat.views import index
+from telemat.views import session
 
 
 urlpatterns = [
-    path('', index),
-    path('admin/', admin.site.urls),
+    # path("", index),
+    path("sessions/<session_id>/", session),
+    path("admin/", admin.site.urls),
 ]

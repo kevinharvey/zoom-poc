@@ -4,20 +4,25 @@ import base64
 import datetime
 
 from django.conf import settings
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
+
+from .models import TeleMATSession
 
 
-def index(request):
-    template_name = "index.html"
+def session(request, session_id):
+    session = get_object_or_404(TeleMATSession, pk=session_id)
+    meeting_id = session.zoom_created_response["id"]
+    template_name = "session.html"
     signature_data = {
         "apiKey": settings.ZOOM_SDK_KEY,
         "apiSecret": settings.ZOOM_SDK_SECRET,
-        "meetingNumber": "652905629",
+        "meetingNumber": meeting_id,
         "role": 0,
     }
     context = {
-        "ZOOM_SDK_KEY": settings.ZOOM_SDK_KEY,
-        "ZOOM_MEETING_SIGNATURE": generateSignature(signature_data),
+        "zoom_sdk_key": settings.ZOOM_SDK_KEY,
+        "zoom_meeting_signature": generateSignature(signature_data),
+        "zoom_meeting_id": meeting_id,
     }
     return render(request, template_name, context)
 
