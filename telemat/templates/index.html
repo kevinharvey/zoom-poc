@@ -73,7 +73,7 @@
                     meetingNumber: parseInt(document.getElementById('meeting_number').value),
                     userName: document.getElementById('display_name').value,
                     passWord: "",
-                    leaveUrl: "http://localhost:8000",
+                    leaveUrl: "{{ request.META.HTTP_HOST }}",
                     role: 0
                 };
 
