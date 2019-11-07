@@ -15,3 +15,5 @@ from .base import *
 SECRET_KEY = "bnpt6_xyuyygvet8z4m&q0@ffh^33w-ters%wo@x1^d=jxvu^-"
 DEBUG = True
 ALLOWED_HOSTS = []
+
+DATABASES = {"default": {"ENGINE": "django.db.backends.postgresql", "NAME": "zoom-poc"}}

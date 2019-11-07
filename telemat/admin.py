@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import TeleMATSession
+
+
+@admin.register(TeleMATSession)
+class TeleMATSessionAdmin(admin.ModelAdmin):
+    pass

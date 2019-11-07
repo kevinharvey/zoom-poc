@@ -13,6 +13,8 @@ pytz = "==2017.3"
 django = "*"
 django-heroku = "*"
 gunicorn = "*"
+requests = "*"
+pyjwt = "*"
 
 [requires]
 python_version = "3.7"
