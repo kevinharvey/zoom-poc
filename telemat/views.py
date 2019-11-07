@@ -9,6 +9,12 @@ from django.shortcuts import get_object_or_404, render
 from .models import TeleMATSession
 
 
+def index(request):
+    template_name = "index.html"
+    context = {"sessions": TeleMATSession.objects.all()}
+    return render(request, template_name, context)
+
+
 def session(request, session_id):
     session = get_object_or_404(TeleMATSession, pk=session_id)
     meeting_id = session.zoom_created_response["id"]
