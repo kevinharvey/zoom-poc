@@ -1,1 +1,1 @@
-web: gunicorn zoom_poc.wsgi --settings=zoom_poc.settings.heroku
+web: gunicorn zoom_poc.wsgi --settings=zoom_poc.settings.heroku —-log-file -
