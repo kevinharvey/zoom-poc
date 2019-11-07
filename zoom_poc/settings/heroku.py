@@ -1,6 +1,6 @@
 import django_heroku
 
-from base import *
+from .base import *
 
 
 # Configure Django App for Heroku.

@@ -1,1 +1,1 @@
-web: pipenv run gunicorn zoom_poc.wsgi —-log-file -
+web: gunicorn zoom_poc.wsgi —-log-file -
